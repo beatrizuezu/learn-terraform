@@ -8,11 +8,15 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("~/Desktop/beatriz/learning-terraform-328312-e0c1fb941bf6.json")
+  # credentials = file("~/Desktop/beatriz/learning-terraform-328312-e0c1fb941bf6.json")
+  credentials = var.credentials_file
 
-  project = "learning-terraform-328312"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  # project = "learning-terraform-328312"
+  # region  = "us-central1"
+  # zone    = "us-central1-c"
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
 
 # Resource blocks have two strings before the block: the resource type and the resource name.
